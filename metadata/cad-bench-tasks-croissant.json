@@ -1,0 +1,269 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "prov": "https://www.w3.org/ns/prov#",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "sc": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "cr:conformsTo",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileObject": "http://mlcommons.org/schema/fileObject",
+    "fileProperty": "http://mlcommons.org/schema/fileProperty",
+    "fileSet": "http://mlcommons.org/schema/fileSet",
+    "includes": "http://mlcommons.org/schema/includes",
+    "hasSyntheticData": "rai:hasSyntheticData",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "source": "cr:source",
+    "wasDerivedFrom": "prov:wasDerivedFrom",
+    "wasGeneratedBy": "prov:wasGeneratedBy"
+  },
+  "@type": "Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "name": "cad-bench-full-reviewer-artifact",
+  "alternateName": "CAD-bench full reviewer artifact",
+  "description": "Full anonymous CAD-bench reviewer artifact for an executable benchmark of language-model CAD agents. It includes task payloads, reported result rows, a source archive, and provenance artifacts for the paper tables. Each task contains a natural-language prompt, TOML metadata, task-specific expected values, a reference Build123D program, and optional fixtures or Blender assets. The benchmark evaluates submitted CAD artifacts with geometric, thread, and rigid-body functional scoring.",
+  "url": "https://huggingface.co/datasets/CAD-bench/cad-bench-ed-2026-anonymous-full",
+  "version": "0.1.0",
+  "identifier": "cad-bench-ed-2026-anonymous-full-0.1.0",
+  "license": [
+    "https://opensource.org/license/mit",
+    "https://www.mcmaster.com/termsandconditions"
+  ],
+  "creator": {
+    "@type": "Person",
+    "name": "Anonymous Author(s)"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CAD-bench"
+  },
+  "dateCreated": "2026-04-24",
+  "datePublished": "2026-04-24",
+  "dateModified": "2026-04-30",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "CAD",
+    "benchmark",
+    "Build123D",
+    "STEP",
+    "language model evaluation",
+    "agent evaluation"
+  ],
+  "citation": "Anonymous Author(s). CAD-bench: An Executable Benchmark for Language-Model CAD Agents. 2026.",
+  "citeAs": "Anonymous Author(s). CAD-bench task payloads. 2026.",
+  "distribution": [
+    {
+      "@type": "https://schema.org/FileObject",
+      "@id": "tasks-manifest-json",
+      "name": "tasks_manifest.json",
+      "description": "JSON manifest with one record per task and SHA-256 hashes for files in each task bundle.",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://huggingface.co/datasets/CAD-bench/cad-bench-ed-2026-anonymous-tasks/raw/fbcba766afcb4d4469d0297ceb819db2527c707d/tasks_manifest.json",
+      "sha256": "f8b578461fae2f5178d115aecb19477f7516d3cbf90117f8bbfa9763521946fe"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "task-directories",
+      "name": "task_directories",
+      "description": "All per-task payload directories under tasks/<task_id>/.",
+      "encodingFormat": "application/octet-stream",
+      "includes": "tasks/**"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "task-toml-files",
+      "name": "task_metadata_files",
+      "encodingFormat": "text/x-toml",
+      "includes": "tasks/*/task.toml"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "task-prompt-files",
+      "name": "task_prompt_files",
+      "encodingFormat": "text/plain",
+      "includes": "tasks/*/prompt.txt"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "task-reference-programs",
+      "name": "task_reference_programs",
+      "encodingFormat": "text/x-python",
+      "includes": "tasks/*/gold.py"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "task-fixtures",
+      "name": "task_fixtures",
+      "encodingFormat": "application/octet-stream",
+      "includes": [
+        "tasks/**/*.step",
+        "tasks/**/*.stp",
+        "tasks/**/*.blend",
+        "tasks/**/*.json"
+      ]
+    },
+    {
+      "@type": "https://schema.org/FileObject",
+      "@id": "reported-results-json",
+      "name": "cad-bench-reported-results.json",
+      "description": "Reviewer-facing JSON artifact containing every complete 17-task row from the CAD-bench website payload reported by the paper, with standalone model and agent rows separated.",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://huggingface.co/datasets/CAD-bench/cad-bench-ed-2026-anonymous-full/raw/main/results/cad-bench-reported-results.json",
+      "sha256": "e392f980bfef26f43f5b73670ae8ab162473460eb948bcb4f4354bd12b175b8d"
+    },
+    {
+      "@type": "https://schema.org/FileObject",
+      "@id": "task-aggregates-json",
+      "name": "cad-bench-task-aggregates.json",
+      "description": "Reviewer-facing JSON artifact containing per-task mean overall score and build success for the 19 standalone model rows and 32 agent rows reported by the paper.",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://huggingface.co/datasets/CAD-bench/cad-bench-ed-2026-anonymous-full/raw/main/results/cad-bench-task-aggregates.json",
+      "sha256": "3b266eff1ebd2552c21d9deaa3352c8010348716174e2d909fc588cf55296d02"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "anonymous-source-archive",
+      "name": "anonymous_source_archive",
+      "description": "Anonymous source archive for the benchmark runtime, scoring code, harnesses, release metadata, and paper source.",
+      "encodingFormat": "application/gzip",
+      "includes": "code/**"
+    },
+    {
+      "@type": "https://schema.org/FileSet",
+      "@id": "run-provenance-artifacts",
+      "name": "run_provenance_artifacts",
+      "description": "Approved run manifest and mirrored provenance artifacts for complete published rows.",
+      "encodingFormat": "application/octet-stream",
+      "includes": "provenance/**"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "tasks",
+      "name": "tasks",
+      "description": "One record per CAD-bench task directory. Records are enumerated by tasks_manifest.json and resolved by the CAD-bench runtime.",
+      "key": "task_id",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "tasks/task_id",
+          "name": "task_id",
+          "description": "Stable task identifier.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "tasks-manifest-json"
+            },
+            "extract": {
+              "column": "task_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "tasks/bundle_sha256",
+          "name": "bundle_sha256",
+          "description": "SHA-256 digest over the task bundle's file-hash map.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "tasks-manifest-json"
+            },
+            "extract": {
+              "column": "bundle_sha256"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "tasks/task_toml",
+          "name": "task.toml",
+          "description": "Task metadata, difficulty, evaluator name, and expected values.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "task-toml-files"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "tasks/prompt_txt",
+          "name": "prompt.txt",
+          "description": "Natural-language task prompt shown to evaluated agents.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "task-prompt-files"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "tasks/gold_py",
+          "name": "gold.py",
+          "description": "Reference Build123D implementation used for validation, evaluator calibration, and media generation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileSet": {
+              "@id": "task-reference-programs"
+            },
+            "extract": {
+              "fileProperty": "fullpath"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rai:dataCollection": "Tasks were authored as synthetic CAD prompts and benchmark metadata. The dataset does not contain human-subject records or scraped personal data. The M3 socket-head screw task includes a McMaster-Carr STEP fixture for part 91290A111, governed by McMaster-Carr website and CAD download terms.",
+  "rai:dataCollectionType": "Synthetic task authoring",
+  "rai:dataUseCases": "The dataset is intended for evaluating language-model CAD agents and CAD code-generation systems through the CAD-bench runtime. It is not intended to certify generated mechanical designs as safe for manufacturing or deployment.",
+  "rai:dataLimitation": "The benchmark has 17 tasks and emphasizes Build123D-compatible reference implementations in the current release. Some tasks are already close to solved, while functional assembly tasks remain difficult. Scores should be interpreted as diagnostic signals rather than broad CAD competence guarantees.",
+  "rai:dataLimitations": "The benchmark has 17 tasks and emphasizes Build123D-compatible reference implementations in the current release. Some tasks are already close to solved, while functional assembly tasks remain difficult. Scores should be interpreted as diagnostic signals rather than broad CAD competence guarantees.",
+  "rai:dataBiases": "The task distribution reflects authored mechanical CAD prompts and overrepresents programmatic Build123D-style construction, metric units, and small mechanical parts relative to the full range of CAD work.",
+  "rai:dataSocialImpact": "Positive uses include more transparent evaluation of CAD assistants, engineering education, and lower-friction prototyping. Misuse risks include overtrust in generated mechanical designs and faster iteration on unsafe or restricted hardware. The benchmark should not be used as a safety certification tool.",
+  "rai:dataSensitive": "No personal or sensitive information is included in the task records.",
+  "rai:personalSensitiveInformation": "No personal or sensitive information is included in the task records.",
+  "rai:dataAnnotationProtocol": "Task metadata, expected values, and reference programs were authored and reviewed as benchmark assets; no crowdsourced annotation was used.",
+  "rai:annotations": "Task metadata and expected values were authored by the benchmark creator. Reference programs are benchmark-side solutions, not model training labels.",
+  "rai:dataMaintenance": "Task hashes are recorded in tasks_manifest.json. Future task refreshes should be versioned with a new Hugging Face revision and corresponding manifest.",
+  "rai:maintenancePlan": "Task hashes are recorded in tasks_manifest.json. Future task refreshes should be versioned with a new Hugging Face revision and corresponding manifest.",
+  "hasSyntheticData": true,
+  "wasGeneratedBy": {
+    "@type": "CreateAction",
+    "name": "CAD-bench task authoring and packaging"
+  },
+  "wasDerivedFrom": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "CAD-bench anonymous source artifact"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "McMaster-Carr CAD model for part 91290A111",
+      "url": "https://www.mcmaster.com/91290A111/"
+    }
+  ]
+}

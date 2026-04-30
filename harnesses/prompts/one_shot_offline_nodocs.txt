@@ -1,0 +1,20 @@
+Write Build123D code to create the model.
+
+Task:
+{task_prompt}
+
+Return exactly one XML block and nothing else. The first characters of your
+response must be `<build123d_code>` and the last characters must be
+`</build123d_code>`.
+
+Do not use markdown. Do not use triple backticks. Do not include explanations.
+
+Inside the XML block, write Python code using Build123D. Do not write XML
+inside the block. Assign the final solid to a top-level variable named `part`.
+
+Use valid Build123D Python. Always include `from build123d import *`. Common
+primitive constructors are capitalized, for example `Box(length, width,
+height)`, `Cylinder(radius, height)`, and `Sphere(radius)`.
+Prefer constructor alignment for placement, for example `Box(20, 20, 20,
+align=(Align.CENTER, Align.CENTER, Align.MAX))`. Do not use `Translate()` or
+put `Location` on the right side of `*`.

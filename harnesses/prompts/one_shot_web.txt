@@ -1,0 +1,7 @@
+Write Build123D code to create the model.
+
+Task:
+{task_prompt}
+
+Put your final solution in `<build123d_code>` tags without any markdown or any other sort of formatting.
+The final solid must be assigned to a top-level variable named `part`.

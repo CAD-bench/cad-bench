@@ -1,0 +1,12 @@
+.cache/
+.git/
+.pi/
+.tmp/
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+dist/
+logs/
+outputs/
+*.pyc

@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "source": "CAD-bench full reviewer artifact reports",
+  "source_repo": "CAD-bench/cad-bench-ed-2026-anonymous-full",
+  "task_dataset_revision": "fbcba766afcb4d4469d0297ceb819db2527c707d",
+  "complete_run_count": 51,
+  "task_row_count": 867,
+  "standalone_model_run_count": 19,
+  "agent_run_count": 32,
+  "metrics": ["overall_score", "build_success"],
+  "aggregates": [
+    {
+      "task_id": "cube_20mm_z_minus",
+      "label": "cube",
+      "difficulty": "easy",
+      "standalone_overall_mean": 0.895,
+      "standalone_build_success_mean": 0.947,
+      "agent_overall_mean": 0.938,
+      "agent_build_success_mean": 0.969
+    },
+    {
+      "task_id": "box_30x20x10_z_plus",
+      "label": "box",
+      "difficulty": "easy",
+      "standalone_overall_mean": 0.947,
+      "standalone_build_success_mean": 1.0,
+      "agent_overall_mean": 0.844,
+      "agent_build_success_mean": 0.844
+    },
+    {
+      "task_id": "ring_30_20_h10_z_plus",
+      "label": "ring spacer",
+      "difficulty": "easy",
+      "standalone_overall_mean": 0.947,
+      "standalone_build_success_mean": 1.0,
+      "agent_overall_mean": 0.938,
+      "agent_build_success_mean": 0.938
+    },
+    {
+      "task_id": "l_bracket_40x40x6_2_hole",
+      "label": "L-bracket",
+      "difficulty": "medium",
+      "standalone_overall_mean": 0.632,
+      "standalone_build_success_mean": 0.842,
+      "agent_overall_mean": 0.906,
+      "agent_build_success_mean": 0.969
+    },
+    {
+      "task_id": "aluminum_extrusion_20x20x60_5_bore",
+      "label": "extrusion",
+      "difficulty": "medium",
+      "standalone_overall_mean": 0.868,
+      "standalone_build_success_mean": 0.947,
+      "agent_overall_mean": 0.875,
+      "agent_build_success_mean": 0.875
+    },
+    {
+      "task_id": "plate_80x40x8_slot_4_hole",
+      "label": "slotted plate",
+      "difficulty": "medium",
+      "standalone_overall_mean": 0.672,
+      "standalone_build_success_mean": 0.947,
+      "agent_overall_mean": 0.864,
+      "agent_build_success_mean": 0.969
+    },
+    {
+      "task_id": "hex_nut_af17_h8_bore10",
+      "label": "hex nut blank",
+      "difficulty": "medium",
+      "standalone_overall_mean": 0.842,
+      "standalone_build_success_mean": 0.895,
+      "agent_overall_mean": 0.75,
+      "agent_build_success_mean": 0.906
+    },
+    {
+      "task_id": "flange_40_24_h20_bolt4",
+      "label": "flange",
+      "difficulty": "hard",
+      "standalone_overall_mean": 0.746,
+      "standalone_build_success_mean": 0.842,
+      "agent_overall_mean": 0.906,
+      "agent_build_success_mean": 0.969
+    },
+    {
+      "task_id": "ring_50_30_h12_6_bolt4_pcd40",
+      "label": "bolted ring",
+      "difficulty": "hard",
+      "standalone_overall_mean": 0.789,
+      "standalone_build_success_mean": 0.789,
+      "agent_overall_mean": 0.947,
+      "agent_build_success_mean": 1.0
+    },
+    {
+      "task_id": "step_block_60_40_30_4_hole",
+      "label": "stepped block",
+      "difficulty": "hard",
+      "standalone_overall_mean": 0.812,
+      "standalone_build_success_mean": 0.947,
+      "agent_overall_mean": 1.0,
+      "agent_build_success_mean": 1.0
+    },
+    {
+      "task_id": "plate_100x60x12_slot_8_hole",
+      "label": "large slotted plate",
+      "difficulty": "hard",
+      "standalone_overall_mean": 0.718,
+      "standalone_build_success_mean": 0.842,
+      "agent_overall_mean": 0.853,
+      "agent_build_success_mean": 1.0
+    },
+    {
+      "task_id": "spur_gear_m1_z16_t6_bore5",
+      "label": "spur gear",
+      "difficulty": "hard",
+      "standalone_overall_mean": 0.237,
+      "standalone_build_success_mean": 0.526,
+      "agent_overall_mean": 0.345,
+      "agent_build_success_mean": 0.844
+    },
+    {
+      "task_id": "m3x6_socket_head_zminus",
+      "label": "M3 socket screw",
+      "difficulty": "hard",
+      "standalone_overall_mean": 0.207,
+      "standalone_build_success_mean": 0.526,
+      "agent_overall_mean": 0.512,
+      "agent_build_success_mean": 0.875
+    },
+    {
+      "task_id": "gearbox_functional_collision_trim",
+      "label": "gearbox",
+      "difficulty": "insane",
+      "standalone_overall_mean": 0.067,
+      "standalone_build_success_mean": 0.632,
+      "agent_overall_mean": 0.316,
+      "agent_build_success_mean": 0.844
+    },
+    {
+      "task_id": "custom_threaded_pair_nonstandard",
+      "label": "threaded pair",
+      "difficulty": "insane",
+      "standalone_overall_mean": 0.012,
+      "standalone_build_success_mean": 0.211,
+      "agent_overall_mean": 0.071,
+      "agent_build_success_mean": 0.938
+    },
+    {
+      "task_id": "compound_gearbox_functional",
+      "label": "compound gearbox",
+      "difficulty": "insane",
+      "standalone_overall_mean": 0.069,
+      "standalone_build_success_mean": 0.632,
+      "agent_overall_mean": 0.138,
+      "agent_build_success_mean": 0.719
+    },
+    {
+      "task_id": "compound_right_angle_gearbox_reverse",
+      "label": "right-angle gearbox",
+      "difficulty": "insane",
+      "standalone_overall_mean": 0.0,
+      "standalone_build_success_mean": 0.158,
+      "agent_overall_mean": 0.04,
+      "agent_build_success_mean": 0.969
+    }
+  ]
+}
