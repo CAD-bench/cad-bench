@@ -1,0 +1,8 @@
+Create one solid cube.
+
+Requirements:
+- Side length exactly 20.0 mm.
+- Faces aligned to global X/Y/Z axes.
+- Top face lies on z=0.
+- Entire cube is in z<=0.
+- Center on X/Y is at (0, 0).

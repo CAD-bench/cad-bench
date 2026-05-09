@@ -1,0 +1,14 @@
+task_id = "cube_20mm_z_minus"
+difficulty = "easy"
+order = 1
+evaluator = "_eval_cube"
+part_aware = false
+reference_geometry_gate = true
+
+[expected]
+side_mm = 20.0
+top_z_mm = 0.0
+min_z_mm = -20.0
+center_x_mm = 0.0
+center_y_mm = 0.0
+volume_mm3 = 8000.0

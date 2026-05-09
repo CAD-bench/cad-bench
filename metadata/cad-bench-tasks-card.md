@@ -30,20 +30,33 @@ Each task directory includes:
 - optional fixtures such as STEP files or Blender simulation scripts
 
 The `results/cad-bench-reported-results.json` artifact contains every complete
-17-task row from the CAD-bench website payload used by the paper tables. The
+17-task row from the anonymous reviewer result payload used by the paper tables. The
 JSON separates 19 standalone model rows from 32 agent rows. The companion
 `results/cad-bench-task-aggregates.json` artifact contains the per-task means
 reported in the paper, computed from the 867 task rows in the provenance
 reports.
 
+`results/cad-bench-scorer-validation.json` contains representative scorer
+calibration cases: reference solutions, independently constructed valid
+alternatives, minor defects, major defects, and nonbuild submissions. These
+cases cover simple pose errors, feature omissions, standards-like fastener
+geometry, threaded mating pairs, and functional gearbox failures, documenting
+why the full task-specific score is stricter than build success or generic
+geometry proxies.
+
 The `provenance/` directory mirrors the approved run manifest and downloaded
 report artifacts for the published rows. The `code/` directory contains the
 anonymous source archive for the benchmark runtime and scoring code.
+The source archive also includes `metadata/cad-bench-repeat-stats.json`, a
+repeated-run statistical check for seven standalone configurations with
+bootstrap confidence intervals and exact paired sign-flip tests where the
+repeat count supports them. The older
+`metadata/cad-bench-repeat-check.json` sanity record is retained for traceability.
 
 For task-only runtime loading, use the companion task dataset:
 
 ```bash
-HF_TASKS_REPO_ID=CAD-bench/cad-bench-ed-2026-anonymous-tasks
+HF_TASKS_REPO_ID=<anonymous-task-dataset-repo>
 ```
 
 ## Intended Use

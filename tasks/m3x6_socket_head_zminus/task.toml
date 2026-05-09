@@ -1,0 +1,24 @@
+task_id = "m3x6_socket_head_zminus"
+difficulty = "hard"
+order = 13
+evaluator = "_eval_hard_m3_socket_head_screw"
+part_aware = true
+reference_geometry_gate = false
+reference_step_fixture = "fixtures/mcmaster/91290A111.step"
+
+[expected]
+major_d_mm = 3.0
+pitch_mm = 0.5
+underhead_len_mm = 6.0
+head_d_mm = 5.5
+head_h_mm = 3.0
+socket_af_mm = 2.5
+socket_depth_mm = 1.5
+turns_to_seat = 12.0
+
+[module_weights]
+generic_pose = 0.2
+generic_dimensions = 0.2
+generic_contact = 0.15
+task_thread = 0.2
+task_insertion = 0.25

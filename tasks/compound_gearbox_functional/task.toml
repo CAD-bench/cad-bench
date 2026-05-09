@@ -1,0 +1,33 @@
+task_id = "compound_gearbox_functional"
+difficulty = "insane"
+order = 16
+evaluator = "_eval_hard_compound_gearbox"
+part_aware = true
+reference_geometry_gate = false
+render_reference_video = "render_compound_reference_video"
+
+[expected]
+axle_a_x_mm = 0.0
+axle_a_y_mm = 0.0
+axle_b_x_mm = 20.0
+axle_b_y_mm = 0.0
+axle_c_x_mm = 50.0
+axle_c_y_mm = 0.0
+axle_radius_mm = 2.0
+axle_flat_x_from_center_mm = 1.5
+axle_min_z_mm = 0.0
+axle_max_z_mm = 10.0
+z_min_mm = 0.0
+z_max_mm = 10.0
+max_sim_faces = 2400.0
+drive_rpm_scale = 1.0
+input_rpm = 120.0
+target_output_rpm = 55.0
+target_ratio = 0.4583333333333333
+drive_mode = "keyframe"
+sim_fps = 300.0
+sim_seconds = 3.0
+rb_substeps = 6.0
+rb_iterations = 120.0
+mesh_collision_margin = 0.0004
+voxel_remesh_mm = 0.0

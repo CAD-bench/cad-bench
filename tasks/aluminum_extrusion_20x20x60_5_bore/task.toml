@@ -1,0 +1,15 @@
+task_id = "aluminum_extrusion_20x20x60_5_bore"
+difficulty = "medium"
+order = 5
+evaluator = "_eval_extrusion"
+part_aware = false
+reference_geometry_gate = false
+
+[expected]
+width_mm = 20.0
+depth_mm = 20.0
+length_mm = 60.0
+center_bore_d_mm = 5.0
+outer_bore_d_mm = 3.0
+top_z_mm = 60.0
+min_z_mm = 0.0

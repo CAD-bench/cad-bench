@@ -1,0 +1,10 @@
+Create a three-level stepped block.
+
+Requirements:
+- Centered at (0, 0) in XY with bottom on z=0 and all geometry in z>=0.
+- Base level: 60.0 x 40.0 x 10.0 mm (X,Y,Z).
+- Middle level on top of base: 40.0 x 30.0 x 10.0 mm.
+- Top level on top of middle: 20.0 x 20.0 x 10.0 mm.
+- Total height: 30.0 mm.
+- Four through-holes (diameter 6.0 mm) along +Z at:
+  - (+15, +10), (+15, -10), (-15, +10), (-15, -10).

@@ -1,0 +1,16 @@
+task_id = "spur_gear_m1_z16_t6_bore5"
+difficulty = "hard"
+order = 12
+evaluator = "_eval_gear"
+part_aware = false
+reference_geometry_gate = false
+
+[expected]
+teeth = 16.0
+module_mm = 1.0
+outer_d_mm = 18.0
+root_d_mm = 13.5
+thickness_mm = 6.0
+bore_d_mm = 5.0
+top_z_mm = 0.0
+min_z_mm = -6.0

@@ -1,0 +1,17 @@
+task_id = "flange_40_24_h20_bolt4"
+difficulty = "hard"
+order = 8
+evaluator = "_eval_hard_flange"
+part_aware = false
+reference_geometry_gate = true
+
+[expected]
+base_d_mm = 40.0
+boss_d_mm = 24.0
+height_mm = 20.0
+base_h_mm = 8.0
+center_bore_d_mm = 12.0
+bolt_circle_d_mm = 30.0
+bolt_hole_d_mm = 5.0
+min_z_mm = 0.0
+max_z_mm = 20.0

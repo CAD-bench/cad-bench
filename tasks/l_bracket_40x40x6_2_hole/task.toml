@@ -1,0 +1,15 @@
+task_id = "l_bracket_40x40x6_2_hole"
+difficulty = "medium"
+order = 4
+evaluator = "_eval_medium_l_bracket"
+part_aware = false
+reference_geometry_gate = true
+
+[expected]
+bbox_x_mm = 40.0
+bbox_y_mm = 40.0
+thickness_mm = 6.0
+min_z_mm = 0.0
+max_z_mm = 6.0
+hole_d_mm = 6.0
+volume_mm3 = 6860.7

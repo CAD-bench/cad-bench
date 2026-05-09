@@ -1,0 +1,14 @@
+task_id = "hex_nut_af17_h8_bore10"
+difficulty = "medium"
+order = 7
+evaluator = "_eval_hard_hex_nut"
+part_aware = false
+reference_geometry_gate = true
+
+[expected]
+af_mm = 17.0
+thickness_mm = 8.0
+bore_d_mm = 10.0
+min_z_mm = 0.0
+max_z_mm = 8.0
+volume_mm3 = 1373.93

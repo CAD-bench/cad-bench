@@ -1,0 +1,26 @@
+task_id = "custom_threaded_pair_nonstandard"
+difficulty = "insane"
+order = 15
+evaluator = "_eval_hard_custom_thread_pair"
+part_aware = true
+reference_geometry_gate = false
+
+[expected]
+bolt_center_x_mm = -14.0
+bolt_center_y_mm = 0.0
+nut_center_x_mm = 14.0
+nut_center_y_mm = 0.0
+z_min_mm = 0.0
+z_max_mm = 18.0
+major_d_mm = 7.3
+root_d_mm = 6.0
+pitch_mm = 1.35
+lead_mm = 2.7
+starts = 2.0
+thread_length_mm = 7.2
+bolt_head_d_mm = 11.5
+bolt_head_h_mm = 3.6
+bolt_total_h_mm = 14.2
+nut_outer_d_mm = 13.0
+nut_h_mm = 8.0
+radial_clearance_mm = 0.18

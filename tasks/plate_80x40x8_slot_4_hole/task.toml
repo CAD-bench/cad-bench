@@ -1,0 +1,17 @@
+task_id = "plate_80x40x8_slot_4_hole"
+difficulty = "medium"
+order = 6
+evaluator = "_eval_medium_plate_slot"
+part_aware = false
+reference_geometry_gate = true
+
+[expected]
+size_x_mm = 80.0
+size_y_mm = 40.0
+size_z_mm = 8.0
+slot_len_mm = 40.0
+slot_w_mm = 10.0
+hole_d_mm = 6.0
+min_z_mm = 0.0
+max_z_mm = 8.0
+volume_mm3 = 21495.22

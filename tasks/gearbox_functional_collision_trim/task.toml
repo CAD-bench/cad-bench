@@ -1,0 +1,29 @@
+task_id = "gearbox_functional_collision_trim"
+difficulty = "insane"
+order = 14
+evaluator = "_eval_hard_gearbox"
+part_aware = true
+reference_geometry_gate = false
+render_reference_video = "render_pair_gearbox_reference_video"
+
+[expected]
+axle_a_x_mm = 0.0
+axle_a_y_mm = 0.0
+axle_b_x_mm = 40.0
+axle_b_y_mm = 0.0
+axle_radius_mm = 2.0
+axle_flat_x_from_center_mm = 1.5
+axle_min_z_mm = 0.0
+axle_max_z_mm = 10.0
+max_sim_faces = 3200.0
+drive_rpm_scale = 0.25
+input_rpm = 120.0
+target_output_rpm = -60.0
+target_ratio = -0.5
+z_min_mm = 0.0
+z_max_mm = 10.0
+sim_fps = 60.0
+sim_seconds = 2.0
+rb_substeps = 6.0
+rb_iterations = 80.0
+voxel_remesh_mm = 0.0
