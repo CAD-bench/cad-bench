@@ -1,7 +1,5 @@
 ---
-license: other
-license_name: cad-bench-mixed-terms
-license_link: https://www.mcmaster.com/termsandconditions
+license: mit
 pretty_name: CAD-bench Full Reviewer Artifact
 language:
 - en
@@ -67,17 +65,14 @@ certifications that generated mechanical parts are safe to manufacture or deploy
 
 ## Data Provenance
 
-The tasks are synthetic CAD prompts and benchmark metadata authored for this
-benchmark. They do not contain personal data or human-subject records. The M3
-socket-head task includes a STEP fixture for a standard commercial fastener,
-documented in the task metadata and paper license table.
+The tasks are synthetic CAD prompts, benchmark metadata, reference programs,
+and fixtures authored for this benchmark. They do not contain personal data or
+human-subject records.
 
 ## Licensing
 
-Authored benchmark code, prompts, task metadata, and reference programs are
-released under MIT. The M3 socket-head screw fixture is a McMaster-Carr CAD
-download for part `91290A111`; use of that fixture is governed by
-McMaster-Carr's website and CAD download terms.
+Benchmark code, prompts, task metadata, reference programs, and authored
+fixtures are released under MIT.
 
 ## Limitations
 

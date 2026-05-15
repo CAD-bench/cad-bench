@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Limited repeated-run sanity check for the NeurIPS 2026 CAD-bench paper.",
+  "generated_at_local": "2026-05-05T20:32:35-07:00",
+  "notes": [
+    "This is not a replacement for repeated-run leaderboard reporting.",
+    "The repeat checks whether one fast standalone configuration preserves the paper's qualitative conclusions."
+  ],
+  "configuration": {
+    "table": "standalone_model",
+    "harness_id": "openai_codex/gpt-5.3-codex-spark-offline-med",
+    "model": "gpt-5.3-codex-spark",
+    "access": "offline",
+    "reasoning_effort": "medium",
+    "task_count": 17
+  },
+  "runs": [
+    {
+      "source": "reported_paper_row",
+      "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260427T023421Z_2115684",
+      "benchmark_score": 0.5036764,
+      "by_difficulty": {
+        "easy": 1.0,
+        "medium": 0.9678285,
+        "hard": 0.700369,
+        "functional": 0.0
+      }
+    },
+    {
+      "source": "repeat_full_sweep",
+      "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T032235Z_2881177",
+      "benchmark_score": 0.4887121486904055,
+      "by_difficulty": {
+        "easy": 1.0,
+        "medium": 0.9678284924848091,
+        "hard": 0.6504881673114791,
+        "functional": 0.0
+      }
+    }
+  ],
+  "summary": {
+    "n": 2,
+    "mean_benchmark_score": 0.49619427434520275,
+    "range_benchmark_score": 0.01496425130959453,
+    "qualitative_conclusion": "The repeat preserves the paper's main diagnostic pattern: easy and medium tasks are stable, functional score remains zero, and variation appears in hard static tasks."
+  }
+}

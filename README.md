@@ -6,8 +6,12 @@ The repo is set up for two use cases:
 
 - reproduce the published harness runs
 - evaluate your own harness against the same task set and scoring code
+- read the public paper PDF and inspect reported-result metadata
 
 Public task payloads are intended to live on Hugging Face. This repo keeps the benchmark runtime, scoring code, and harnesses; the published static website lives in the separate `CAD-bench/cad-bench.github.io` repo.
+
+The public paper PDF is available at `paper/main.pdf`. LaTeX sources are
+intentionally not included in this public repo.
 
 ## Scoring & Tasks
 

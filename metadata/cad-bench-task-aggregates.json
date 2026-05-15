@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "source": "CAD-bench full reviewer artifact reports",
-  "source_repo": "CAD-bench/cad-bench-ed-2026-anonymous-full",
-  "task_dataset_revision": "fbcba766afcb4d4469d0297ceb819db2527c707d",
+  "source": "anonymous full reviewer artifact reports",
+  "source_artifact": "anonymous full reviewer artifact reports",
+  "task_dataset_revision": "20ad0b586b70ac2c5e6fe2b501386cf26a887137",
   "complete_run_count": 51,
   "task_row_count": 867,
   "standalone_model_run_count": 19,

@@ -1,0 +1,1673 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-05-07T01:05:06.362391+00:00",
+  "complete_report_count": 47,
+  "min_repeats": 2,
+  "statistical_notes": [
+    "Confidence intervals are nonparametric bootstrap percentile intervals over full benchmark sweeps.",
+    "Paired p-values use an exact two-sided sign-flip test on per-sweep difficulty aggregates.",
+    "The exact sign-flip test needs at least six all-same-sign paired differences to reach p < 0.05."
+  ],
+  "repeated_harnesses": [
+    {
+      "harness_id": "openai/gpt-5.3-codex-spark-offline-med",
+      "provider": "openai_codex",
+      "strategy": "one_shot_code",
+      "model": "gpt-5.3-codex-spark",
+      "access": "offline",
+      "reasoning_effort": "medium",
+      "run_count": 6,
+      "run_ids": [
+        "openai__gpt-5.3-codex-spark-offline-med_20260506T032235Z_2881177",
+        "openai__gpt-5.3-codex-spark-offline-med_20260506T035519Z_2898433",
+        "openai__gpt-5.3-codex-spark-offline-med_20260506T040258Z_2903307",
+        "openai__gpt-5.3-codex-spark-offline-med_20260506T040905Z_2908469",
+        "openai__gpt-5.3-codex-spark-offline-med_20260506T041829Z_2914907",
+        "openai__gpt-5.3-codex-spark-offline-med_20260506T043139Z_2924597"
+      ],
+      "benchmark_score": {
+        "n": 6,
+        "mean": 0.47065908889750563,
+        "sd": 0.02521210575806455,
+        "sem": 0.01029279907472397,
+        "min": 0.43871214869040553,
+        "max": 0.5088705564598449,
+        "bootstrap_ci95": [
+          0.45326352093593236,
+          0.48972911794688534
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.9731904104040076,
+          "sd": 0.01313396294472202,
+          "sem": 0.00536191791919849,
+          "min": 0.9678284924848091,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.9678284924848091,
+            0.9839142462424045
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.5720507040271726,
+          "sd": 0.09355144631277475,
+          "sem": 0.038192218027612156,
+          "min": 0.48382150064481244,
+          "max": 0.717682859876277,
+          "bootstrap_ci95": [
+            0.5066414797108174,
+            0.6426789494056121
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.011014489021380825,
+          "sd": 0.026979877879870256,
+          "sem": 0.011014489021380827,
+          "min": 0.0,
+          "max": 0.06608693412828495,
+          "bootstrap_ci95": [
+            0.0,
+            0.033043467064142476
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.7222222222222222,
+          "sd": 0.08606629658238708,
+          "sem": 0.03513641844631535,
+          "min": 0.6666666666666666,
+          "max": 0.8333333333333334,
+          "bootstrap_ci95": [
+            0.6666666666666666,
+            0.7777777777777778
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.20833333333333334,
+          "sd": 0.18819316317727025,
+          "sem": 0.0768295371441074,
+          "min": 0.0,
+          "max": 0.5,
+          "bootstrap_ci95": [
+            0.08333333333333333,
+            0.3333333333333333
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.5610362150057917,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T032235Z_2881177",
+              "difference": 0.6504881673114791
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T035519Z_2898433",
+              "difference": 0.5364381673114791
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T040258Z_2903307",
+              "difference": 0.48382150064481244
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T040905Z_2908469",
+              "difference": 0.717682859876277
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T041829Z_2914907",
+              "difference": 0.5560156883741754
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T043139Z_2924597",
+              "difference": 0.4217709065165275
+            }
+          ],
+          "bootstrap_ci95": [
+            0.4856303772682354,
+            0.640562322659883
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.9621759213826268,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T032235Z_2881177",
+              "difference": 0.9678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T035519Z_2898433",
+              "difference": 0.9678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T040258Z_2903307",
+              "difference": 0.9678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T040905Z_2908469",
+              "difference": 0.9678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T041829Z_2914907",
+              "difference": 0.9678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T043139Z_2924597",
+              "difference": 0.9339130658717151
+            }
+          ],
+          "bootstrap_ci95": [
+            0.950870779178262,
+            0.9678284924848091
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.1973188443119525,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T032235Z_2881177",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T035519Z_2898433",
+              "difference": 0.0
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T040258Z_2903307",
+              "difference": 0.0
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T040905Z_2908469",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T041829Z_2914907",
+              "difference": 0.5
+            },
+            {
+              "run_id": "openai__gpt-5.3-codex-spark-offline-med_20260506T043139Z_2924597",
+              "difference": 0.18391306587171505
+            }
+          ],
+          "bootstrap_ci95": [
+            0.07231884431195251,
+            0.3333333333333333
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.125
+        }
+      ]
+    },
+    {
+      "harness_id": "openai/gpt-5.5-offline-high",
+      "provider": "openai_codex",
+      "strategy": "one_shot_code",
+      "model": "gpt-5.5",
+      "access": "offline",
+      "reasoning_effort": "high",
+      "run_count": 6,
+      "run_ids": [
+        "openai__gpt-5.5-offline-high_20260506T145714Z_3171951",
+        "openai__gpt-5.5-offline-high_20260506T183503Z_3264418",
+        "openai__gpt-5.5-offline-high_20260506T190129Z_3291508",
+        "openai__gpt-5.5-offline-high_20260506T192838Z_3312997",
+        "openai__gpt-5.5-offline-high_20260506T195117Z_3325409",
+        "openai__gpt-5.5-offline-high_20260506T203236Z_3348349"
+      ],
+      "benchmark_score": {
+        "n": 6,
+        "mean": 0.504987337736196,
+        "sd": 0.07135226211890064,
+        "sem": 0.02912943903077064,
+        "min": 0.40537881535707215,
+        "max": 0.6255464898865187,
+        "bootstrap_ci95": [
+          0.45419990381555797,
+          0.5627387682864774
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 0.9444444444444444,
+          "sd": 0.13608276348795437,
+          "sem": 0.05555555555555557,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.8333333333333333,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.8428284924848091,
+          "sd": 0.13693063937629152,
+          "sem": 0.05590169943749474,
+          "min": 0.7178284924848091,
+          "max": 0.9678284924848091,
+          "bootstrap_ci95": [
+            0.7594951591514757,
+            0.9261618258181424
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.7428536894171605,
+          "sd": 0.06296017151812373,
+          "sem": 0.025703382389585614,
+          "min": 0.6504881673114791,
+          "max": 0.8293163276161297,
+          "bootstrap_ci95": [
+            0.6963851615615402,
+            0.7883975573136045
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.04780271992410421,
+          "sd": 0.1032280998060475,
+          "sem": 0.04214269527365192,
+          "min": 0.0,
+          "max": 0.25797807889467045,
+          "bootstrap_ci95": [
+            0.0018467610168261966,
+            0.13268256148098762
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.8611111111111112,
+          "sd": 0.12546210878484684,
+          "sem": 0.05121969142940494,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.7777777777777778,
+            0.9444444444444444
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.4166666666666667,
+          "sd": 0.3415650255319866,
+          "sem": 0.13944333775567927,
+          "min": 0.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.20833333333333334,
+            0.6666666666666666
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.6950509694930562,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T145714Z_3171951",
+              "difference": 0.8293163276161297
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T183503Z_3264418",
+              "difference": 0.6888367446136655
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T190129Z_3291508",
+              "difference": 0.6504881673114791
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T192838Z_3312997",
+              "difference": 0.7845112844458546
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T195117Z_3325409",
+              "difference": 0.7124995057602495
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T203236Z_3348349",
+              "difference": 0.5046537872109589
+            }
+          ],
+          "bootstrap_ci95": [
+            0.6073756706453274,
+            0.772574656727662
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.7950257725607048,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T145714Z_3171951",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T183503Z_3264418",
+              "difference": 0.9500708179358114
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T190129Z_3291508",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T192838Z_3312997",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T195117Z_3325409",
+              "difference": 0.9567479263838519
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T203236Z_3348349",
+              "difference": 0.7098504135901387
+            }
+          ],
+          "bootstrap_ci95": [
+            0.7151691328532522,
+            0.8759952636761642
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.36886394674256245,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T145714Z_3171951",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T183503Z_3264418",
+              "difference": 0.4822423254510024
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T190129Z_3291508",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T192838Z_3312997",
+              "difference": 0.0
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T195117Z_3325409",
+              "difference": 0.9889194338990428
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-high_20260506T203236Z_3348349",
+              "difference": 0.24202192110532955
+            }
+          ],
+          "bootstrap_ci95": [
+            0.16237737442605532,
+            0.6194597169495214
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.0625
+        }
+      ]
+    },
+    {
+      "harness_id": "openai/gpt-5.5-offline-low",
+      "provider": "openai_codex",
+      "strategy": "one_shot_code",
+      "model": "gpt-5.5",
+      "access": "offline",
+      "reasoning_effort": "low",
+      "run_count": 6,
+      "run_ids": [
+        "openai__gpt-5.5-offline-low_20260506T143113Z_3138466",
+        "openai__gpt-5.5-offline-low_20260506T145711Z_3171972",
+        "openai__gpt-5.5-offline-low_20260506T183504Z_3264415",
+        "openai__gpt-5.5-offline-low_20260506T184825Z_3280463",
+        "openai__gpt-5.5-offline-low_20260506T185643Z_3287446",
+        "openai__gpt-5.5-offline-low_20260506T191236Z_3301906"
+      ],
+      "benchmark_score": {
+        "n": 6,
+        "mean": 0.4765058455725532,
+        "sd": 0.025630969917997366,
+        "sem": 0.010463799651953124,
+        "min": 0.4265739038177922,
+        "max": 0.5008490485139012,
+        "bootstrap_ci95": [
+          0.45526214848240387,
+          0.49160076334947306
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 0.9444444444444444,
+          "sd": 0.13608276348795437,
+          "sem": 0.05555555555555557,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.8333333333333333,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.7178284924848091,
+          "sd": 0.15811388300841894,
+          "sem": 0.06454972243679027,
+          "min": 0.4678284924848091,
+          "max": 0.9678284924848091,
+          "bootstrap_ci95": [
+            0.5928284924848091,
+            0.8428284924848091
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.7413780376662821,
+          "sd": 0.08534807745705808,
+          "sem": 0.03484320671622133,
+          "min": 0.6154363848219802,
+          "max": 0.8085110525685091,
+          "bootstrap_ci95": [
+            0.6784575053895326,
+            0.7981307654610992
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.04020572832815581,
+          "sd": 0.07919033139267537,
+          "sem": 0.0323293174123265,
+          "min": 0.0,
+          "max": 0.19793967797854736,
+          "bootstrap_ci95": [
+            0.0,
+            0.1061856209876716
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 0.9444444444444444,
+          "sd": 0.13608276348795437,
+          "sem": 0.05555555555555557,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.8333333333333333,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.9166666666666666,
+          "sd": 0.13944333775567927,
+          "sem": 0.056927504255331114,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.8055555555555556,
+            1.0
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.2916666666666667,
+          "sd": 0.18819316317727025,
+          "sem": 0.0768295371441074,
+          "min": 0.0,
+          "max": 0.5,
+          "bootstrap_ci95": [
+            0.16666666666666666,
+            0.4166666666666667
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.7011723093381262,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T143113Z_3138466",
+              "difference": 0.8085110525685091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T145711Z_3171972",
+              "difference": 0.7972536928236748
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T183504Z_3264415",
+              "difference": 0.7565902187455605
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T184825Z_3280463",
+              "difference": 0.7766940177361014
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T185643Z_3287446",
+              "difference": 0.4525484893329317
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T191236Z_3301906",
+              "difference": 0.6154363848219802
+            }
+          ],
+          "bootstrap_ci95": [
+            0.5878209607316685,
+            0.7892519019872151
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.6776227641566532,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T143113Z_3138466",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T145711Z_3171972",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T183504Z_3264415",
+              "difference": 0.6745338004944216
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T184825Z_3280463",
+              "difference": 0.4678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T185643Z_3287446",
+              "difference": 0.5198888145062617
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T191236Z_3301906",
+              "difference": 0.9678284924848091
+            }
+          ],
+          "bootstrap_ci95": [
+            0.5598385461550512,
+            0.8098385461550511
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.25146093833851085,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T143113Z_3138466",
+              "difference": 0.0
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T145711Z_3171972",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T183504Z_3264415",
+              "difference": 0.20670530800961248
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T184825Z_3280463",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T185643Z_3287446",
+              "difference": 0.3020603220214526
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-low_20260506T191236Z_3301906",
+              "difference": 0.5
+            }
+          ],
+          "bootstrap_ci95": [
+            0.12646093833851085,
+            0.375
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.0625
+        }
+      ]
+    },
+    {
+      "harness_id": "openai/gpt-5.5-offline-med",
+      "provider": "openai_codex",
+      "strategy": "one_shot_code",
+      "model": "gpt-5.5",
+      "access": "offline",
+      "reasoning_effort": "medium",
+      "run_count": 6,
+      "run_ids": [
+        "openai__gpt-5.5-offline-med_20260506T145738Z_3171964",
+        "openai__gpt-5.5-offline-med_20260506T183503Z_3264416",
+        "openai__gpt-5.5-offline-med_20260506T193629Z_3318849",
+        "openai__gpt-5.5-offline-med_20260506T195151Z_3325819",
+        "openai__gpt-5.5-offline-med_20260506T200931Z_3335456",
+        "openai__gpt-5.5-offline-med_20260506T202025Z_3340521"
+      ],
+      "benchmark_score": {
+        "n": 6,
+        "mean": 0.4444586923627897,
+        "sd": 0.07301775395454461,
+        "sem": 0.029809373225453815,
+        "min": 0.33904850107604034,
+        "max": 0.5677895527904755,
+        "bootstrap_ci95": [
+          0.39125400454815007,
+          0.5028442410846469
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 0.9444444444444444,
+          "sd": 0.13608276348795437,
+          "sem": 0.05555555555555557,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.8333333333333333,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.7178284924848091,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 0.7178284924848091,
+          "max": 0.7178284924848091,
+          "bootstrap_ci95": [
+            0.7178284924848091,
+            0.7178284924848091
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.5709782445830914,
+          "sd": 0.14954100050677896,
+          "sem": 0.06104985781114819,
+          "min": 0.31715483397814576,
+          "max": 0.7614288235580887,
+          "bootstrap_ci95": [
+            0.45214888758208766,
+            0.6667335931819602
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.08788769011614005,
+          "sd": 0.08238276472059357,
+          "sem": 0.033632622860868974,
+          "min": 0.0,
+          "max": 0.23948801806521772,
+          "bootstrap_ci95": [
+            0.03619060876395872,
+            0.15368799375497588
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 0.9444444444444444,
+          "sd": 0.13608276348795437,
+          "sem": 0.05555555555555557,
+          "min": 0.6666666666666666,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.8333333333333333,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.6666666666666666,
+          "sd": 0.21081851067789198,
+          "sem": 0.08606629658238706,
+          "min": 0.3333333333333333,
+          "max": 0.8333333333333334,
+          "bootstrap_ci95": [
+            0.5,
+            0.8055555555555556
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.4583333333333333,
+          "sd": 0.3322900339562814,
+          "sem": 0.1356568383008309,
+          "min": 0.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.20833333333333334,
+            0.7083333333333334
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.48309055446695137,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T145738Z_3171964",
+              "difference": 0.39630620262321764
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T183503Z_3264416",
+              "difference": 0.2329806196807254
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T193629Z_3318849",
+              "difference": 0.521940805492871
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T195151Z_3325819",
+              "difference": 0.5528161553997858
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T200931Z_3335456",
+              "difference": 0.6198995925082705
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T202025Z_3340521",
+              "difference": 0.5745999510968379
+            }
+          ],
+          "bootstrap_ci95": [
+            0.37044402802700294,
+            0.5760660906517232
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.629940802368669,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T145738Z_3171964",
+              "difference": 0.6141346951080267
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T183503Z_3264416",
+              "difference": 0.6336542781873887
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T193629Z_3318849",
+              "difference": 0.4783404744195914
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T195151Z_3325819",
+              "difference": 0.661103564881324
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T200931Z_3335456",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T202025Z_3340521",
+              "difference": 0.6745833091308743
+            }
+          ],
+          "bootstrap_ci95": [
+            0.5628188814607377,
+            0.6800118740824858
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.3704456432171933,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T145738Z_3171964",
+              "difference": 0.39630620262321764
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T183503Z_3264416",
+              "difference": 0.41582578570257966
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T193629Z_3318849",
+              "difference": 0.2605119819347823
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T195151Z_3325819",
+              "difference": 0.943275072396515
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T200931Z_3335456",
+              "difference": 0.0
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-med_20260506T202025Z_3340521",
+              "difference": 0.20675481664606515
+            }
+          ],
+          "bootstrap_ci95": [
+            0.1647151270750687,
+            0.6188196335788286
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.0625
+        }
+      ]
+    },
+    {
+      "harness_id": "openai/gpt-5.5-offline-xhigh",
+      "provider": "openai_codex",
+      "strategy": "one_shot_code",
+      "model": "gpt-5.5",
+      "access": "offline",
+      "reasoning_effort": "xhigh",
+      "run_count": 6,
+      "run_ids": [
+        "openai__gpt-5.5-offline-xhigh_20260506T183503Z_3264414",
+        "openai__gpt-5.5-offline-xhigh_20260506T195254Z_3326898",
+        "openai__gpt-5.5-offline-xhigh_20260506T211200Z_3364555",
+        "openai__gpt-5.5-offline-xhigh_20260506T225106Z_3386731",
+        "openai__gpt-5.5-offline-xhigh_20260506T233255Z_3395709",
+        "openai__gpt-5.5-offline-xhigh_20260507T001129Z_3402641"
+      ],
+      "benchmark_score": {
+        "n": 6,
+        "mean": 0.5725675525552121,
+        "sd": 0.055785536648786244,
+        "sem": 0.022774349969476165,
+        "min": 0.47891926508497795,
+        "max": 0.6489730709242723,
+        "bootstrap_ci95": [
+          0.5282130886886234,
+          0.6115511223239505
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.7594951591514757,
+          "sd": 0.10206207261596575,
+          "sem": 0.04166666666666667,
+          "min": 0.7178284924848091,
+          "max": 0.9678284924848091,
+          "bootstrap_ci95": [
+            0.7178284924848091,
+            0.8428284924848091
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.8545146493933049,
+          "sd": 0.0630735368011272,
+          "sem": 0.025749663572569734,
+          "min": 0.7627388033849587,
+          "max": 0.8966996404130554,
+          "bootstrap_ci95": [
+            0.8099535422144062,
+            0.8954823769391701
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.16078531476731356,
+          "sd": 0.1430680257320917,
+          "sem": 0.05840727692516641,
+          "min": 0.0,
+          "max": 0.3414099739955856,
+          "bootstrap_ci95": [
+            0.05703684052123986,
+            0.26453378901338725
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.9444444444444444,
+          "sd": 0.08606629658238703,
+          "sem": 0.03513641844631532,
+          "min": 0.8333333333333334,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.888888888888889,
+            1.0
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.6666666666666666,
+          "sd": 0.30276503540974914,
+          "sem": 0.12360330811826105,
+          "min": 0.25,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.4583333333333333,
+            0.875
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.6937293346259913,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T183503Z_3264414",
+              "difference": 0.6844488759487564
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T195254Z_3326898",
+              "difference": 0.7845118886267203
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T211200Z_3364555",
+              "difference": 0.48165793190410205
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T225106Z_3386731",
+              "difference": 0.8966996404130554
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T233255Z_3395709",
+              "difference": 0.7603230354286453
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260507T001129Z_3402641",
+              "difference": 0.5547346354346686
+            }
+          ],
+          "bootstrap_ci95": [
+            0.5781115326204086,
+            0.8011991615761589
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.5987098443841622,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T183503Z_3264414",
+              "difference": 0.5059199515597509
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T195254Z_3326898",
+              "difference": 0.7178284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T211200Z_3364555",
+              "difference": 0.4367476210039524
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T225106Z_3386731",
+              "difference": 0.9678284924848091
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T233255Z_3395709",
+              "difference": 0.5875159902824281
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260507T001129Z_3402641",
+              "difference": 0.3764185184892235
+            }
+          ],
+          "bootstrap_ci95": [
+            0.45476857481160005,
+            0.765843735663966
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.5058813518993531,
+          "differences": [
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T183503Z_3264414",
+              "difference": 0.5380914590749418
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T195254Z_3326898",
+              "difference": 0.5
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T211200Z_3364555",
+              "difference": 0.7189191285191434
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T225106Z_3386731",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260506T233255Z_3395709",
+              "difference": 0.869687497797619
+            },
+            {
+              "run_id": "openai__gpt-5.5-offline-xhigh_20260507T001129Z_3402641",
+              "difference": 0.1585900260044144
+            }
+          ],
+          "bootstrap_ci95": [
+            0.3088798720894668,
+            0.7025507852847445
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        }
+      ]
+    },
+    {
+      "harness_id": "openrouter/tencent/hy3-preview:free-offline-none",
+      "provider": "openrouter",
+      "strategy": "one_shot_code",
+      "model": "tencent/hy3-preview:free",
+      "access": "offline",
+      "reasoning_effort": "",
+      "run_count": 6,
+      "run_ids": [
+        "openrouter__tencent__hy3-preview_free-offline-none_20260506T055911Z_2965302",
+        "openrouter__tencent__hy3-preview_free-offline-none_20260506T055919Z_2965327",
+        "openrouter__tencent__hy3-preview_free-offline-none_20260506T060953Z_2984120",
+        "openrouter__tencent__hy3-preview_free-offline-none_20260506T061446Z_2994661",
+        "openrouter__tencent__hy3-preview_free-offline-none_20260506T061758Z_3000463",
+        "openrouter__tencent__hy3-preview_free-offline-none_20260506T062125Z_3009319"
+      ],
+      "benchmark_score": {
+        "n": 6,
+        "mean": 0.517650636014883,
+        "sd": 0.059266644506615965,
+        "sem": 0.024195506301355467,
+        "min": 0.41454015461181976,
+        "max": 0.5823761700382464,
+        "bootstrap_ci95": [
+          0.470874799439863,
+          0.5565421765240759
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.8226094974949364,
+          "sd": 0.13815728502890967,
+          "sem": 0.05640247542818103,
+          "min": 0.7178284924848091,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.728552328323206,
+            0.9166666666666666
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.6640255809381306,
+          "sd": 0.09916607023568655,
+          "sem": 0.04048437864573841,
+          "min": 0.5,
+          "max": 0.8078215006448124,
+          "bootstrap_ci95": [
+            0.5845569972521121,
+            0.7368165283151215
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.13480265558614143,
+          "sd": 0.05260058904691656,
+          "sem": 0.021474100555795884,
+          "min": 0.052436140287144745,
+          "max": 0.21807429961200675,
+          "bootstrap_ci95": [
+            0.09503836221111656,
+            0.17580510527834206
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 6,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 6,
+          "mean": 0.9583333333333334,
+          "sd": 0.10206207261596575,
+          "sem": 0.04166666666666667,
+          "min": 0.75,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.875,
+            1.0
+          ]
+        },
+        "hard": {
+          "n": 6,
+          "mean": 0.7777777777777778,
+          "sd": 0.08606629658238708,
+          "sem": 0.03513641844631535,
+          "min": 0.6666666666666666,
+          "max": 0.8333333333333334,
+          "bootstrap_ci95": [
+            0.7222222222222222,
+            0.8333333333333334
+          ]
+        },
+        "insane": {
+          "n": 6,
+          "mean": 0.4583333333333333,
+          "sd": 0.10206207261596575,
+          "sem": 0.04166666666666667,
+          "min": 0.25,
+          "max": 0.5,
+          "bootstrap_ci95": [
+            0.375,
+            0.5
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.5292229253519892,
+          "differences": [
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T055911Z_2965302",
+              "difference": 0.4324138676994723
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T055919Z_2965327",
+              "difference": 0.5137884010305573
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T060953Z_2984120",
+              "difference": 0.6701237398611473
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T061446Z_2994661",
+              "difference": 0.4475638597128553
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T061758Z_3000463",
+              "difference": 0.5587605725496682
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T062125Z_3009319",
+              "difference": 0.5526871112582348
+            }
+          ],
+          "bootstrap_ci95": [
+            0.47208407140081343,
+            0.5938571412230167
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.6878068419087949,
+          "differences": [
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T055911Z_2965302",
+              "difference": 0.7819257003879932
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T055919Z_2965327",
+              "difference": 0.5801879083497207
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T060953Z_2984120",
+              "difference": 0.6123022392163349
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T061446Z_2994661",
+              "difference": 0.6653923521976643
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T061758Z_3000463",
+              "difference": 0.6123022392163349
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T062125Z_3009319",
+              "difference": 0.8747306120847214
+            }
+          ],
+          "bootstrap_ci95": [
+            0.6104458144243518,
+            0.7806353546760261
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 6,
+          "mean_difference": 0.3235306777471919,
+          "differences": [
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T055911Z_2965302",
+              "difference": 0.28192570038799325
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T055919Z_2965327",
+              "difference": 0.3623594158649116
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T060953Z_2984120",
+              "difference": 0.11230223921633489
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T061446Z_2994661",
+              "difference": 0.4475638597128553
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T061758Z_3000463",
+              "difference": 0.36230223921633486
+            },
+            {
+              "run_id": "openrouter__tencent__hy3-preview_free-offline-none_20260506T062125Z_3009319",
+              "difference": 0.3747306120847214
+            }
+          ],
+          "bootstrap_ci95": [
+            0.23730223921633486,
+            0.3948750997794
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.03125
+        }
+      ]
+    },
+    {
+      "harness_id": "openrouter/inclusionai/ling-2.6-1t:free-offline-none",
+      "provider": "openrouter",
+      "strategy": "one_shot_code",
+      "model": "inclusionai/ling-2.6-1t:free",
+      "access": "offline",
+      "reasoning_effort": "",
+      "run_count": 5,
+      "run_ids": [
+        "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T055906Z_2965313",
+        "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T060916Z_2984050",
+        "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061431Z_2994600",
+        "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061758Z_3000420",
+        "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T062111Z_3007780"
+      ],
+      "benchmark_score": {
+        "n": 5,
+        "mean": 0.15376328706327652,
+        "sd": 0.10000125355525397,
+        "sem": 0.04472192015694808,
+        "min": 0.03881909333333333,
+        "max": 0.2983546325037582,
+        "bootstrap_ci95": [
+          0.07990160191452735,
+          0.2356229254167823
+        ]
+      },
+      "score_by_difficulty": {
+        "easy": {
+          "n": 5,
+          "mean": 0.3333333333333333,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 0.3333333333333333,
+          "max": 0.3333333333333333,
+          "bootstrap_ci95": [
+            0.3333333333333333,
+            0.3333333333333333
+          ]
+        },
+        "medium": {
+          "n": 5,
+          "mean": 0.26097318760316085,
+          "sd": 0.23636509047315538,
+          "sem": 0.10570568196117267,
+          "min": 0.027428800000000003,
+          "max": 0.5,
+          "bootstrap_ci95": [
+            0.07194470760316082,
+            0.45000166760316085
+          ]
+        },
+        "hard": {
+          "n": 5,
+          "mean": 0.22745105403103674,
+          "sd": 0.20013060936764082,
+          "sem": 0.08950112938490021,
+          "min": 0.0,
+          "max": 0.5500709972347497,
+          "bootstrap_ci95": [
+            0.08410352125075347,
+            0.4068805843209566
+          ]
+        },
+        "insane": {
+          "n": 5,
+          "mean": 0.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "build_success_by_difficulty": {
+        "easy": {
+          "n": 5,
+          "mean": 1.0,
+          "sd": 0.0,
+          "sem": 0.0,
+          "min": 1.0,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "medium": {
+          "n": 5,
+          "mean": 0.75,
+          "sd": 0.1767766952966369,
+          "sem": 0.07905694150420949,
+          "min": 0.5,
+          "max": 1.0,
+          "bootstrap_ci95": [
+            0.6,
+            0.9
+          ]
+        },
+        "hard": {
+          "n": 5,
+          "mean": 0.6,
+          "sd": 0.14907119849998599,
+          "sem": 0.06666666666666667,
+          "min": 0.5,
+          "max": 0.8333333333333334,
+          "bootstrap_ci95": [
+            0.5,
+            0.7333333333333334
+          ]
+        },
+        "insane": {
+          "n": 5,
+          "mean": 0.2,
+          "sd": 0.2091650066335189,
+          "sem": 0.09354143466934853,
+          "min": 0.0,
+          "max": 0.5,
+          "bootstrap_ci95": [
+            0.05,
+            0.35
+          ]
+        }
+      },
+      "paired_tests": [
+        {
+          "contrast": "hard_score_minus_functional_score",
+          "n": 5,
+          "mean_difference": 0.22745105403103674,
+          "differences": [
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T055906Z_2965313",
+              "difference": 0.16666666666666666
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T060916Z_2984050",
+              "difference": 0.5500709972347497
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061431Z_2994600",
+              "difference": 0.21752326323386703
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061758Z_3000420",
+              "difference": 0.20299434301990033
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T062111Z_3007780",
+              "difference": 0.0
+            }
+          ],
+          "bootstrap_ci95": [
+            0.08410352125075347,
+            0.4068805843209566
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.125
+        },
+        {
+          "contrast": "medium_score_minus_functional_score",
+          "n": 5,
+          "mean_difference": 0.26097318760316085,
+          "differences": [
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T055906Z_2965313",
+              "difference": 0.027428800000000003
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T060916Z_2984050",
+              "difference": 0.5
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061431Z_2994600",
+              "difference": 0.25000833801580413
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061758Z_3000420",
+              "difference": 0.5
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T062111Z_3007780",
+              "difference": 0.027428800000000003
+            }
+          ],
+          "bootstrap_ci95": [
+            0.07194470760316082,
+            0.45000166760316085
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.0625
+        },
+        {
+          "contrast": "functional_build_success_minus_functional_score",
+          "n": 5,
+          "mean_difference": 0.2,
+          "differences": [
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T055906Z_2965313",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T060916Z_2984050",
+              "difference": 0.5
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061431Z_2994600",
+              "difference": 0.25
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T061758Z_3000420",
+              "difference": 0.0
+            },
+            {
+              "run_id": "openrouter__inclusionai__ling-2.6-1t_free-offline-none_20260506T062111Z_3007780",
+              "difference": 0.0
+            }
+          ],
+          "bootstrap_ci95": [
+            0.05,
+            0.35
+          ],
+          "p_value_two_sided_exact_sign_flip": 0.25
+        }
+      ]
+    }
+  ]
+}

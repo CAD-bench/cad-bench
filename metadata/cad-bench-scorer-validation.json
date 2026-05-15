@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "purpose": "Representative scorer-calibration cases used by the NeurIPS 2026 paper.",
+  "notes": [
+    "Cases are hand-authored to cover references, independently expressed valid alternatives, minor defects, major defects, and nonbuild failures.",
+    "The ablation columns illustrate why build success or generic geometry proxies are insufficient for CAD-bench."
+  ],
+  "records": [
+    {
+      "task_id": "cube_20mm_z_minus",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 1.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 1.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 1.0,
+        "overall_score": 1.0,
+        "pose_score": 1.0,
+        "reference_geometry_gate": 1.0,
+        "reward": 1.0,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "cube_20mm_z_minus",
+      "candidate": "independent_valid",
+      "expected_tier": "valid_alternative",
+      "description": "Equivalent cube built through the builder API rather than the reference one-liner.",
+      "scores": {
+        "full_overall": 1.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 1.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 1.0,
+        "overall_score": 1.0,
+        "pose_score": 1.0,
+        "reference_geometry_gate": 1.0,
+        "reward": 1.0,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "cube_20mm_z_minus",
+      "candidate": "wrong_half_space",
+      "expected_tier": "major_defect",
+      "description": "Correct dimensions but placed in z>=0 instead of z<=0.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "pose_score": 0.45,
+        "reference_geometry_gate": 0.0,
+        "reward": 0.05,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "cube_20mm_z_minus",
+      "candidate": "shifted_xy",
+      "expected_tier": "major_defect",
+      "description": "Correct cube shifted far away from the required XY origin.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "pose_score": 0.55,
+        "reference_geometry_gate": 0.0,
+        "reward": 0.05,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "flange_40_24_h20_bolt4",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 1.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 1.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 1.0,
+        "overall_score": 1.0,
+        "pose_score": 1.0,
+        "reference_geometry_gate": 1.0,
+        "reward": 1.0,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "flange_40_24_h20_bolt4",
+      "candidate": "independent_valid",
+      "expected_tier": "valid_alternative",
+      "description": "Same flange expressed with a separate cutter compound and trigonometric hole placement.",
+      "scores": {
+        "full_overall": 1.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 1.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 1.0,
+        "overall_score": 1.0,
+        "pose_score": 1.0,
+        "reference_geometry_gate": 1.0,
+        "reward": 1.0,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "flange_40_24_h20_bolt4",
+      "candidate": "missing_bolt_holes",
+      "expected_tier": "major_defect",
+      "description": "The gross silhouette is plausible, but all four bolt holes are omitted.",
+      "scores": {
+        "full_overall": 0.175989,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.341249
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.341249,
+        "overall_score": 0.175989,
+        "pose_score": 1.0,
+        "reference_geometry_gate": 0.341249,
+        "reward": 0.21719,
+        "task_score": 0.5525
+      }
+    },
+    {
+      "task_id": "flange_40_24_h20_bolt4",
+      "candidate": "wrong_bolt_circle",
+      "expected_tier": "minor_defect",
+      "description": "All features exist, but the bolt circle is 1 mm too small.",
+      "scores": {
+        "full_overall": 0.799746,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.799746
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.799746,
+        "overall_score": 0.799746,
+        "pose_score": 1.0,
+        "reference_geometry_gate": 0.799746,
+        "reward": 0.809759,
+        "task_score": 1.0
+      }
+    },
+    {
+      "task_id": "m3x6_socket_head_zminus",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 0.999999,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.999999
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "layer_generic_score": 0.999999,
+        "layer_task_score": 1.0,
+        "overall_score": 0.999999,
+        "reward": 0.999999,
+        "simulation_score": 1.0,
+        "socket_score": 1.0,
+        "task_score": 1.0,
+        "thread_score": 1.0
+      }
+    },
+    {
+      "task_id": "m3x6_socket_head_zminus",
+      "candidate": "authored_equivalent_fixture",
+      "expected_tier": "valid_alternative",
+      "description": "Independently authored Build123D screw matching the frozen evaluator observables.",
+      "scores": {
+        "full_overall": 0.999996,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.999992
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "layer_generic_score": 0.999992,
+        "layer_task_score": 1.0,
+        "overall_score": 0.999996,
+        "reward": 0.999996,
+        "simulation_score": 1.0,
+        "socket_score": 1.0,
+        "task_score": 1.0,
+        "thread_score": 1.0
+      }
+    },
+    {
+      "task_id": "m3x6_socket_head_zminus",
+      "candidate": "threaded_without_socket",
+      "expected_tier": "minor_defect",
+      "description": "Thread signal is present, but the drive socket is omitted.",
+      "scores": {
+        "full_overall": 0.628749,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.722725
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "layer_generic_score": 0.722725,
+        "layer_task_score": 0.513889,
+        "overall_score": 0.628749,
+        "reward": 0.647311,
+        "simulation_score": 0.125,
+        "socket_score": 0.25,
+        "task_score": 0.513889,
+        "thread_score": 1.0
+      }
+    },
+    {
+      "task_id": "m3x6_socket_head_zminus",
+      "candidate": "plain_cylinder_shank",
+      "expected_tier": "major_defect",
+      "description": "A simple unthreaded shank with no head socket.",
+      "scores": {
+        "full_overall": 0.273463,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.435454
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "layer_generic_score": 0.435454,
+        "layer_task_score": 0.075474,
+        "overall_score": 0.273463,
+        "reward": 0.30979,
+        "simulation_score": 0.015853,
+        "socket_score": 0.25,
+        "task_score": 0.075474,
+        "thread_score": 0.15
+      }
+    },
+    {
+      "task_id": "gearbox_functional_collision_trim",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 0.962077,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "direction_score": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.962077,
+        "reward": 0.963973,
+        "task_score": 0.962077
+      }
+    },
+    {
+      "task_id": "gearbox_functional_collision_trim",
+      "candidate": "rigid_bridge",
+      "expected_tier": "major_defect",
+      "description": "A rigid bridge fits the axle holes geometrically but cannot transmit geared motion.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "direction_score": 0.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "component_bridges_both_axles",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "reward": 0.05,
+        "task_score": 0.0
+      }
+    },
+    {
+      "task_id": "gearbox_functional_collision_trim",
+      "candidate": "shifted_reference",
+      "expected_tier": "major_defect",
+      "description": "Reference gear pair shifted off the fixed axle centers.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "direction_score": 0.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "missing_axle_components",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "reward": 0.05,
+        "task_score": 0.0
+      }
+    },
+    {
+      "task_id": "gearbox_functional_collision_trim",
+      "candidate": "syntax_error",
+      "expected_tier": "nonbuild",
+      "description": "Invalid Python submission.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 0.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 0.0,
+        "error_message": "'(' was never closed (<candidate>, line 1)",
+        "error_type": "SyntaxError",
+        "failure_stage": "execution_error",
+        "overall_score": 0.0,
+        "reward": 0.0,
+        "task_score": 0.0
+      }
+    },
+    {
+      "task_id": "custom_threaded_pair_nonstandard",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 0.974257,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.974257,
+        "reward": 0.975544,
+        "task_score": 0.974257
+      }
+    },
+    {
+      "task_id": "custom_threaded_pair_nonstandard",
+      "candidate": "plain_unthreaded_pair",
+      "expected_tier": "major_defect",
+      "description": "Bolt and nut silhouettes are plausible, but both mating thread profiles are omitted.",
+      "scores": {
+        "full_overall": 0.406295,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.406295,
+        "reward": 0.43598,
+        "task_score": 0.406295
+      }
+    },
+    {
+      "task_id": "compound_gearbox_functional",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 0.954641,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.954641,
+        "reward": 0.956909,
+        "task_score": 0.954641
+      }
+    },
+    {
+      "task_id": "compound_gearbox_functional",
+      "candidate": "rigid_three_axle_bridge",
+      "expected_tier": "major_defect",
+      "description": "A rigid three-axle bridge satisfies rough placement but cannot act as a compound gear train.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "component_bridges_multiple_axles",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "reward": 0.05,
+        "task_score": 0.0
+      }
+    },
+    {
+      "task_id": "compound_right_angle_gearbox_reverse",
+      "candidate": "reference",
+      "expected_tier": "reference",
+      "description": "Benchmark-side reference implementation.",
+      "scores": {
+        "full_overall": 0.977126,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.977126,
+        "reward": 0.978269,
+        "task_score": 0.977126
+      }
+    },
+    {
+      "task_id": "compound_right_angle_gearbox_reverse",
+      "candidate": "two_plain_cylinders",
+      "expected_tier": "major_defect",
+      "description": "Two cylinders occupy the assembly space but omit the right-angle gear interface.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "component_bridges_multiple_axes",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "reward": 0.05,
+        "task_score": 0.0
+      }
+    },
+    {
+      "task_id": "compound_right_angle_gearbox_reverse",
+      "candidate": "intersecting_reference",
+      "expected_tier": "major_defect",
+      "description": "Reference-like construction with intentionally intersecting bodies.",
+      "scores": {
+        "full_overall": 0.0,
+        "build_success_only": 1.0,
+        "naive_geometry_proxy": 0.0
+      },
+      "selected_metrics": {
+        "build_success": 1.0,
+        "error_message": "",
+        "error_type": "",
+        "failure_reason": "intersecting_bodies",
+        "failure_stage": "",
+        "geometry_score": 0.0,
+        "overall_score": 0.0,
+        "reward": 0.05,
+        "task_score": 0.0
+      }
+    }
+  ]
+}

@@ -1,7 +1,5 @@
 ---
-license: other
-license_name: cad-bench-mixed-terms
-license_link: https://www.mcmaster.com/termsandconditions
+license: mit
 pretty_name: CAD-bench Task Payloads
 language:
 - en
@@ -44,7 +42,5 @@ reproducing the paper exactly.
 
 ## Licensing
 
-Authored benchmark code, prompts, task metadata, and reference programs are
-released under MIT. The M3 socket-head screw fixture is a McMaster-Carr CAD
-download for part `91290A111`; use of that fixture is governed by
-McMaster-Carr's website and CAD download terms.
+Benchmark code, prompts, task metadata, reference programs, and authored
+fixtures are released under MIT.
