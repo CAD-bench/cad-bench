@@ -1,13 +1,11 @@
-.cache/
 .env
-.pi/
 .tmp/
+.venv/
 .pytest_cache/
 .ruff_cache/
-.venv/
 __pycache__/
-dist/
+*.pyc
+jobs/
+.cache/
 logs/
 outputs/
-*.pyc
-scripts/upload_stream_chunks.py

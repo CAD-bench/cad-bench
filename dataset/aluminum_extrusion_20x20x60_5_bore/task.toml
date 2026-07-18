@@ -1,0 +1,43 @@
+schema_version = "1.3"
+artifacts = ["/workspace/final.py"]
+
+[task]
+name = "cad-bench/aluminum_extrusion_20x20x60_5_bore"
+description = "Construct and verify the CAD-bench task aluminum_extrusion_20x20x60_5_bore."
+authors = [{ name = "CAD-bench authors" }]
+keywords = ["cad", "build123d", "medium"]
+
+[metadata]
+benchmark = "CAD-bench"
+category = "mechanical-cad"
+difficulty = "medium"
+difficulty_weight = 2.0
+order = 5
+
+[verifier]
+timeout_sec = 7200.0
+env = { CAD_BENCH_TASK_ID = "aluminum_extrusion_20x20x60_5_bore" }
+environment_mode = "separate"
+network_mode = "no-network"
+
+[verifier.environment]
+docker_image = "ghcr.io/cad-bench/cad-bench-verifier:harbor-v1"
+network_mode = "no-network"
+build_timeout_sec = 1800.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[agent]
+timeout_sec = 7200.0
+
+[environment]
+docker_image = "ghcr.io/cad-bench/cad-bench-agent:harbor-v1"
+network_mode = "public"
+build_timeout_sec = 1200.0
+workdir = "/workspace"
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0

@@ -1,9 +1,0 @@
-Create a simple aluminum-extrusion-like bar segment.
-
-Requirements:
-- Outer body is a 20.0 x 20.0 mm square prism, length 60.0 mm.
-- Axis is global Z.
-- Bottom face lies on z=0 and the part is entirely in z>=0.
-- Through-bores run parallel to +Z over full length:
-  - one center bore: diameter 5.0 mm at (x, y) = (0, 0)
-  - four bores: diameter 3.0 mm at (±7.0, 0) and (0, ±7.0)

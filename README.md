@@ -1,189 +1,127 @@
 # CAD-bench
 
-CAD-bench is a CAD benchmark for LLMs and agentic harnesses. It currently has 17 tasks: 3 easy, 4 medium, 6 hard, and 4 insane.
+CAD-bench is a native [Harbor](https://www.harborframework.com/) benchmark for evaluating agents that construct mechanical parts and functional assemblies in Build123D. The repository contains the tasks and domain verifier; Harbor supplies agent adapters, model configuration, sandbox lifecycle, retries, concurrency, trajectories, artifacts, result storage, and result inspection.
 
-The repo is set up for two use cases:
+The active public benchmark is [`dataset/`](dataset), with 17 self-contained tasks. A separate access-controlled seven-task functional refresh exists for held-out evaluation but is intentionally absent from this public repository. There is no benchmark-specific runner, model harness, container orchestrator, provenance uploader, or remote task loader.
 
-- reproduce the published harness runs
-- evaluate your own harness against the same task set and scoring code
-- read the public paper PDF and inspect reported-result metadata
+## Install Harbor
 
-Public task payloads are intended to live on Hugging Face. This repo keeps the benchmark runtime, scoring code, and harnesses; the published static website lives in the separate `CAD-bench/cad-bench.github.io` repo.
-
-The public paper PDF is available at `paper/main.pdf`. LaTeX sources are
-intentionally not included in this public repo.
-
-## Scoring & Tasks
-
-Each task provides:
-- `task.toml`: metadata, difficulty, evaluator, expected values
-- `prompt.txt`: benchmark prompt
-- `gold.py`: reference Build123D solution
-- optional fixtures or Blender assets
-
-Task files are loaded either from a local `tasks/<task_id>/` tree or from the HF dataset configured by `HF_TASKS_REPO_ID`. If `HF_TASKS_REPO_ID` is unset, the loader derives a default public task repo from the owner of `HF_PROVENANCE_REPO_ID`. The anonymous NeurIPS 2026 task-only reviewer mirror uses `CAD-bench/cad-bench-ed-2026-anonymous-tasks` at the revision recorded in `RELEASE.md`.
-
-Per-task scoring returns:
-- `submission_exists`
-- `build_success`
-- `task_score`
-- `overall_score`
-- `reward = 0.05 * build_success + 0.95 * overall_score`
-
-The benchmark-level aggregate is the difficulty-weighted mean of `overall_score`, with weights `easy=1`, `medium=2`, `hard=3`, `insane=4`.
-
-## Requirements
-
-- Python 3.11
-- `uv`
-- Docker
-- Blender on `PATH` for the Blender-scored gearbox tasks and `export-task-media`
-
-## Setup
+The datasets are validated against Harbor 0.19.0:
 
 ```bash
-uv sync
-cp .env.example .env
+uv tool install 'harbor==0.19.0'
 ```
 
-Fill all mandatory variables and optional variables depending on which harnesses you want to evaluate into .env.
+Docker must be available for local runs. Until the versioned images are published, build the two shared images once:
 
 ```bash
-docker build -t cad-build123d-bench .
+./images/build.sh
 ```
 
-`eval-harness` uses these variables:
-- always: `CAD_BENCH_AGENT_IMAGE`, `HF_PROVENANCE_REPO_ID`
-- optional: `HF_TASKS_REPO_ID` and `HF_TASKS_REVISION` to pin the public task dataset
-- `HF_TOKEN` for uploading provenance to Hugging Face (the provenance takes up a lot of disk space, so it is currently only supported on HuggingFace)
-- OpenAI harnesses: `OPENAI_API_KEY`
-- Codex and Pi harnesses: `CODEX_AUTH_JSON_B64` (JSON code authentication token located in $HOME/.codex; API-only runs will likely be prohibitively expensive)
-- Gemini harnesses: `GEMINI_API_KEY` or `GOOGLE_API_KEY`
-- Vercel AI Gateway harnesses: `AI_GATEWAY_API_KEY`
-- `EXA_API_KEY`: optional for more consistent Pi web search
+Every task then runs independently with ordinary Harbor using the image references in its own `task.toml`.
 
+## Run CAD-bench
 
-## Reproducing Built-in Harnesses
-
-Run one harness across all 17 tasks:
+Run the complete public dataset with any Harbor-supported agent and model:
 
 ```bash
-uv run eval-harness \
-  --harness harnesses/codex/harnesses.py:gpt_5_4_web_low
+harbor run \
+  --path dataset \
+  --agent '<agent>' \
+  --model '<model>' \
+  --n-concurrent 4
 ```
 
-Run one harness on a subset:
+Run one task while developing:
 
 ```bash
-uv run eval-harness \
-  --harness harnesses/openai/harnesses.py:gpt_5_4_mini_offline_med \
-  --task-ids cube_20mm_z_minus,box_30x20x10_z_plus
+harbor run \
+  --path dataset/cube_20mm_z_minus \
+  --agent '<agent>' \
+  --model '<model>'
 ```
 
-Run the built-in matrix once:
+Run an oracle smoke test without configuring a model:
 
 ```bash
-uv run python scripts/run_clean_matrix.py
+harbor run --path dataset/cube_20mm_z_minus --agent oracle
 ```
 
-Useful filters:
+Harbor writes jobs to `jobs/` by default. Each trial includes its resolved configuration, trajectory, verifier output, declared `final.py` artifact, and rewards. Inspect them with:
 
 ```bash
-uv run python scripts/run_clean_matrix.py \
-  --providers openai \
-  --models gpt-5.4-mini \
-  --accesses web,offline
+harbor view jobs
 ```
 
-Built-in harness refs always use:
+## Task contract
+
+Each task asks the agent to create:
 
 ```text
-harnesses/<provider>/harnesses.py:<function_name>
+/workspace/final.py
 ```
 
-Examples:
+The file must run with Python 3.11 and Build123D 0.10.0 and leave the completed model in a top-level variable named `part`.
 
-- `harnesses/codex/harnesses.py:gpt_5_4_web_low`
-- `harnesses/pi/harnesses.py:gpt_5_4_mini_offline_high`
-- `harnesses/openai/harnesses.py:gpt_5_4_nano_web_ci_med`
+Grading runs in Harbor's `separate` verifier mode with networking disabled. Harbor stops the agent environment, transfers the declared `/workspace/final.py` artifact, and starts the shared verifier image named in `task.toml`. The fixture-backed fastener oracle also transfers its STEP support asset at the declared `/workspace/fixtures/` path; ordinary submissions remain a single `final.py` file. The verifier executes the candidate, checks the resulting topology and geometry, and applies the task-specific deterministic or Blender rigid-body evaluation. It writes:
 
-## Evaluate Your Own Harness
+- `reward.json`: Harbor reward channels (`reward`, `overall_score`, `task_score`, and `build_success`)
+- `grading.json`: the complete scoring record
+- `scoring/`: meshes, simulation records, renders, and failure evidence produced during grading
 
-The loader expects a harness ref in the same form:
+The verifier image contains the shared evaluator plus public task contracts, reference programs, and functional simulation assets. None is mounted into the agent environment.
+
+## Dataset layout
 
 ```text
-path/to/harnesses.py:symbol_name
+dataset/
+├── dataset.toml                 # Harbor dataset manifest and exact task digests
+├── metric.py                    # CAD-bench aggregate metric
+└── <task_id>/
+    ├── instruction.md
+    ├── task.toml                # Harbor schema, image refs, task selector
+    ├── environment/             # required Harbor directory; image is prebuilt
+    ├── contract.toml            # task-specific scoring values
+    └── solution/                # Harbor oracle and reference program
+
+images/                          # one agent image and one verifier image
+verifier/                        # shared evaluator and three simulation families
 ```
 
-That module must provide:
-
-- an exported `symbol_name` whose value, or return value, is a `HarnessSpec`
-- `build_prompt(spec, task_prompt) -> tuple[str | None, str]`
-- `run(runtime, spec, system_prompt, prompt, workdir, submission_dir, image, ...)`
-
-Custom harnesses are not restricted to the built-in provider, strategy, or access names. The simplest path is still to copy one of the built-in harness modules under `harnesses/` and change only the provider-specific code.
-
-Two harness styles already exist:
-
-- `one_shot_code`: return Build123D code wrapped in `<build123d_code>...</build123d_code>`
-- `agent_step`: write the final STEP file to `~/final.step` inside the guest container
-
-## Published Results Site
-
-Published website results come from `approved_runs.json` inside the
-`CAD-bench/cad-bench.github.io` repo, not directly from `logs/` or blind scans of the provenance repo.
-Do not mutate that repo from benchmark runners. Review website entries in the website repo,
-then render the static HTML from that checked-out tree.
-
-Render the site into a checked-out `cad-bench.github.io` working tree:
+`dataset/` owns task-specific data, `verifier/` owns shared scoring logic, and `images/` owns container dependencies. Rebuild the images and refresh the manifest after changing any of them:
 
 ```bash
-uv run python scripts/render_site.py \
-  --approved-runs-json /path/to/cad-bench.github.io/approved_runs.json \
-  --output-html /path/to/cad-bench.github.io/index.html
+harbor sync dataset
+git diff -- dataset/dataset.toml
 ```
 
-Upload public task definitions from a local task mirror to Hugging Face:
+The public custom metric first computes the mean `overall_score` within each represented difficulty tier, then combines tier means with weights 1 for easy, 2 for medium, 3 for hard, and 4 for insane. Missing rewards count as zero. This preserves the benchmark's tier-balanced score rather than allowing a tier with more tasks to dominate.
+
+## Private dataset policy
+
+The private development dataset contains exactly seven unreleased functional tasks:
+
+- two direct spur-gear transfers
+- three three-shaft idler transfers
+- two compound right-angle transfers
+
+It stays in the private development repository and must not be copied here or published publicly. Its Harbor manifest name is `cad-bench/cad-bench-functional-v1` so it can later be published privately and access-controlled through the Harbor registry.
+
+## Publishing later
+
+Publishing is intentionally separate from development. When a public release is approved:
 
 ```bash
-uv run upload-public-tasks --tasks-root /path/to/cad-bench-tasks/tasks
+harbor auth login
+harbor auth status
+harbor sync dataset
+harbor publish dataset --public --tag '<version>'
 ```
 
-Export hash canaries for private or unreleased tasks:
+No registry release is implied by this working copy. Until one exists, run with `--path`.
 
-```bash
-uv run export-task-canaries --tasks-root /path/to/private-tasks --out outputs/private_task_canaries.json --salt-env PRIVATE_TASK_CANARY_SALT
-```
+## Research artifacts
 
-## Useful Commands
+The paper PDF and JSON files under `metadata/` are retained research records. They are not executable benchmark infrastructure. New evaluations should use Harbor job results as the canonical run record.
 
-Generate/update the offline Build123D docs bundle:
-
-```bash
-uv run build123d-docs-bundle
-```
-
-Render fixed views from candidate code (for manual inspection of agent results):
-
-```bash
-uv run render-cad-views /path/to/candidate.py --out ./renders --prefix sample
-```
-
-Export reference images and videos:
-
-```bash
-uv run export-task-media --out outputs/cad_benchmark_media --skip-send
-```
-
-Run tests:
-
-```bash
-uv run pytest
-```
-
-## Release Metadata
-
-NeurIPS release notes live in `RELEASE.md`. The full reviewer artifact
-Croissant metadata is `metadata/cad-bench-tasks-croissant.json`; the Hugging
-Face dataset cards are `metadata/cad-bench-tasks-card.md` for the full artifact
-and `metadata/cad-bench-tasks-only-card.md` for the task-only runtime dataset.
+See [`DATA_CARD.md`](DATA_CARD.md) for scope, grading, aggregation, and limitations, and [`RELEASE.md`](RELEASE.md) for the local release checks.

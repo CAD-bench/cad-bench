@@ -1,0 +1,81 @@
+[dataset]
+name = "cad-bench/cad-bench"
+description = "Executable mechanical CAD construction tasks with deterministic geometry and functional verification."
+keywords = [ "cad", "build123d", "agent-evaluation",]
+[[dataset.authors]]
+name = "CAD-bench authors"
+
+
+[[tasks]]
+name = "cad-bench/cube_20mm_z_minus"
+digest = "sha256:d250265910cdb4397be5884fe25d20010bbbc222a7ed6a5025b66bbaba7a6e50"
+
+[[tasks]]
+name = "cad-bench/box_30x20x10_z_plus"
+digest = "sha256:5ef5d9342345a10cfe982abcf428160d6cbadacec91fb3e7ad7f2d0fe2226e62"
+
+[[tasks]]
+name = "cad-bench/ring_30_20_h10_z_plus"
+digest = "sha256:b2e6f25aa113d1dc2b4ad058f351db43d5705db92246b0d9f7c4859e7061a4e9"
+
+[[tasks]]
+name = "cad-bench/l_bracket_40x40x6_2_hole"
+digest = "sha256:d06d909581d374b953d146698fbdf2a7962c7080bb758ed5937e0de3cfbb3259"
+
+[[tasks]]
+name = "cad-bench/aluminum_extrusion_20x20x60_5_bore"
+digest = "sha256:4e51d567c049505c32571085990de5a79d8bb91d6257754b35ca7827de278d9d"
+
+[[tasks]]
+name = "cad-bench/plate_80x40x8_slot_4_hole"
+digest = "sha256:098be56c05f7d2e72708e3b742ef1d59aec0c4f1509ec00fdda7a4acda7533bf"
+
+[[tasks]]
+name = "cad-bench/hex_nut_af17_h8_bore10"
+digest = "sha256:f6f6cb4491ffe7fd878cba02a259c5381f94356f024804f6ae64c6e56a327448"
+
+[[tasks]]
+name = "cad-bench/flange_40_24_h20_bolt4"
+digest = "sha256:b63f74e791a0dde9fa509b02bb3bf15b6564888d93cdbce289f82390454af097"
+
+[[tasks]]
+name = "cad-bench/ring_50_30_h12_6_bolt4_pcd40"
+digest = "sha256:e6126c50c333ab8de88d851cbba6833bbb14e4af8f0b1e7f5d9553eab6ff962c"
+
+[[tasks]]
+name = "cad-bench/step_block_60_40_30_4_hole"
+digest = "sha256:4954af9ef361d4b8b2da2c73cd4ced2953b90fd9b1f43f4dfe743c8d2065f089"
+
+[[tasks]]
+name = "cad-bench/plate_100x60x12_slot_8_hole"
+digest = "sha256:bb73b7ab418fc48c816ac483a73a9d0300e8627a9ef80e164a6aacb189d4e141"
+
+[[tasks]]
+name = "cad-bench/spur_gear_m1_z16_t6_bore5"
+digest = "sha256:2a37905467e96c0f48e24fbb64812bcd79526bbcdfa4a0e5262768313047fd2d"
+
+[[tasks]]
+name = "cad-bench/m3x6_socket_head_zminus"
+digest = "sha256:b3366de6fbb7e9c9b5c70a4230c4a95c79ae1e6ab1d70862ad2daa61cc7c35d5"
+
+[[tasks]]
+name = "cad-bench/gearbox_functional_collision_trim"
+digest = "sha256:cd8ab571dc76d4eeabce9349eda2425e58cabdf20ca0e1f438bd3853eaa5bb29"
+
+[[tasks]]
+name = "cad-bench/custom_threaded_pair_nonstandard"
+digest = "sha256:dd35d52d91e4a514ef53fbefa62876b5bbad7c849be37c6d4a32ec0beb8738d7"
+
+[[tasks]]
+name = "cad-bench/compound_gearbox_functional"
+digest = "sha256:6bc1d2211dbcdb18f27ccde3105ee6d3aa6837d58fed64b201f30c65159b9f49"
+
+[[tasks]]
+name = "cad-bench/compound_right_angle_gearbox_reverse"
+digest = "sha256:68b59a31b0aadccd31c457e34654f5d5b8ef8cece3cedc1fa44e52b132d842db"
+
+
+[[files]]
+path = "metric.py"
+digest = "sha256:aad130babd0c122aebc7375ee5b6ca856f5b5cb84ea0d2244d19aaf0dba9588b"
+

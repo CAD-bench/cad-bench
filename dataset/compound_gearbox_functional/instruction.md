@@ -1,0 +1,28 @@
+Create a three-shaft idler gearbox on three pre-existing D-shafts.
+
+Rig (already present; do not model):
+- Input shaft center at (0, 0), idler shaft center at (20, 0), output shaft center at (50, 0)
+- All shafts are along +Z
+- All shafts are D-shafts: nominal diameter 4 mm with flat at x = center_x + 1.5 mm
+- Shaft z-range is [0, 10]
+- Input speed +120 rpm
+
+Your part requirements:
+- Include only transmission geometry in z in [0, 10]
+- Use three rigid bodies:
+  - one input gear body on the input shaft
+  - one idler gear body on the middle shaft
+  - one output gear body on the output shaft
+- A direct three-gear train is expected
+- Target output speed is about +55 rpm
+- Evaluation uses simultaneous rigid-body physical simulation on your authored
+  mesh geometry directly, on the fixed D-shafts above, at the stated +120 rpm input speed
+
+Scoring points:
+- correct physical transfer ratio and direction under simulation
+- preserved authored placement on all three shafts
+- correct three-body gear-train structure
+
+Submission contract
+
+Create `/workspace/final.py`. The file must run with Python 3.11 and Build123D 0.10.0, and it must leave the completed model in a top-level variable named `part`. The verifier evaluates that object directly.

@@ -1,0 +1,13 @@
+Create one ISO M3x6 hex socket head cap screw.
+
+Requirements:
+- Axis is global Z.
+- Top of head is on z=0; no geometry above z=0.
+- Under-head length: 6.0 mm.
+- Head: 5.5 mm diameter, 3.0 mm height.
+- External right-hand thread, 0.5 mm pitch.
+- Centered hex socket, 2.5 mm across flats, 1.5 mm deep.
+
+Submission contract
+
+Create `/workspace/final.py`. The file must run with Python 3.11 and Build123D 0.10.0, and it must leave the completed model in a top-level variable named `part`. The verifier evaluates that object directly.
